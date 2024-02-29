@@ -1,2 +1,0 @@
-this is a random file for practicing github actions
-this random file has been edited on the feature/searchbar branch after pulling from github
