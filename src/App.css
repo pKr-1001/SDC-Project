@@ -1,1 +1,41 @@
 
+.a-text {
+  font-family: serif;
+}
+
+.a-line {
+  text-decoration-line: underline;
+  font-family: serif;
+  -webkit-text-decoration-line: underline;
+}
+
+a {
+  color: inherit;
+}
+
+.px-05 {
+    padding-left: .125rem;
+    padding-right: .125rem;
+}
+
+.text-center {
+    text-align: center;
+} 
+
+.w-full {
+    width: 100%;
+}
+
+.text-xs {
+  font-size: .75rem;
+  line-height: 1rem;
+}
+
+.announcement {
+  position: relative;
+  height: auto;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+}
