@@ -48,3 +48,16 @@ a {
     padding-right: 1.25rem;
     align-items: center;
 }
+
+.textBlack {
+  --tw-text-opacity: 1;
+    color: rgb(51 51 51 / var(--tw-text-opacity));
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
