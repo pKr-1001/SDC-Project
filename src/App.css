@@ -39,3 +39,12 @@ a {
   padding-bottom: .5rem;
   padding-top: .5rem;
 }
+
+.nav-bar {
+  --tw-bg-opacity: 1;
+    background-color: rgb(253 251 247 / var(--tw-bg-opacity));
+    overflow-y: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    align-items: center;
+}
