@@ -61,3 +61,7 @@ a {
 .flex-col {
   flex-direction: column;
 }
+
+.button {
+  cursor: pointer;
+}
