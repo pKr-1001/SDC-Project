@@ -4,8 +4,15 @@ const Footer = () => {
 
     return (
         <>
-                <footer className="footer-data">
-                    
+                <footer>
+                    <div lassName="footer-data">
+                        <div className="footer-url">
+                            <a href></a>
+                            <a href></a>
+                            <a href></a>
+                            <a href></a>
+                        </div>
+                    </div>
                 </footer>
         </>
     )
