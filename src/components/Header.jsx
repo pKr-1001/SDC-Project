@@ -13,7 +13,7 @@ const Header = () => {
             </div>
         <nav className="nav-bar">
             <div className="w-full flex flex-col">
-                <span role="button" className="nav-item">
+                <span className="button nav-item">
                     <svg className="textBlack">
                     <rect width="20" height="1.33333"></rect>
                     <rect y="5.33203" width="20" height="1.33333"></rect>
