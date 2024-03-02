@@ -22,20 +22,53 @@ pool.connect()
 
 app.use(express.json());
 app.use(cors());
-//app.use(express.static(/*"folder"*/));
+//app.use(express.static(/*"folder"*/)); ADD THIS WHEN PRODUCTION FOLDER IS UP
 
 app.get('/', (req, res) => {
     res.send('Homepage');
 });
 
-app.get('/products', async (req, res) => {
+app.get('/mugs', async (req, res) => {
     try {
-        const data = await pool.query('SELECT * FROM fellow_carter_move_mug');
+        const data = await pool.query('SELECT * FROM mugs');
         console.log("Result of get all products query: ", data.rows);
-        res.json(data.rows)
+        res.json(data.rows);
     }
     catch(err){
-        console.error(err)
+        console.error(err);
+    }
+})
+
+app.get('/mugs/:id', async (req, res) => {
+    //TODO edge cases for id
+    const id = req.params.id;
+    try {
+        const data = await pool.query(
+            `SELECT * FROM mugs
+            WHERE mug_id = $1`,
+            [id]
+        )
+        console.log("Result of get all mugs query: ", data.rows[0]);
+        res.json(data.rows[0]);
+    }
+    catch (err) {
+        console.error(err);
+    }
+})
+
+app.post('/mugs', async (req, res) => {
+    const { mug_name, mug_description_1, mug_cost } = req.body
+    try {
+        const data = await pool.query(
+            `INSERT INTO mugs (mug_name, mug_description_1, mug_cost) VALUES
+            ($1, $2, $3) RETURNING *`,
+            [mug_name, mug_description_1, mug_cost]
+        )
+        console.log("Result of post request: ", data.rows[0]);
+        res.json(data.rows[0]);
+    }
+    catch (err) {
+        console.error(err);
     }
 })
 
