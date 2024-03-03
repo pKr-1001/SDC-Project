@@ -9,6 +9,10 @@
   -webkit-text-decoration-line: underline;
 }
 
+.font-serif {
+  font-family: Chronicle Text G1 Roman, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+}
+
 a {
   color: inherit;
 }
@@ -26,18 +30,23 @@ a {
     width: 100%;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .text-xs {
   font-size: .75rem;
   line-height: 1rem;
 }
 
-.announcement {
-  position: relative;
-  height: auto;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+.py-2 {
   padding-bottom: .5rem;
   padding-top: .5rem;
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color:  rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .nav-bar {
@@ -48,7 +57,7 @@ a {
     align-items: center;
 }
 
-.textBlack {
+.text-black {
   --tw-text-opacity: 1;
     color: rgb(51 51 51 / var(--tw-text-opacity));
 }
@@ -135,4 +144,63 @@ a {
   height: 2rem;
 }
 
+.relative {
+  position: relative;
+}
 
+.px-05 {
+  padding-left: .125rem;
+  padding-right: .125 rem;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.sticky {
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+.duration-500 {
+  transition-duration: .5s;
+}
+
+.-translate-y-0, .-translate-y-full {
+  transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.transition {
+  transition-duration: .15s;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.-translate-y-0 {
+  --tw-translate-y: -0px;
+}
+
+.-translate-y-full {
+  --tw-translate-y: -100%;
+}
+
+.hidden {
+  transform: translateY(-100%)
+}
