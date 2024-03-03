@@ -1,13 +1,34 @@
-
+import { useEffect, useState } from 'react';
 
 const Header = () => {
+
+    const [isVisible, setIsVisible] = useState(true)
+    const [lastScroll, setLastScroll] = useState(0)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScroll) {
+                setIsVisible(false);
+            } else {
+                setIsVisible(true);
+            }
+            setLastScroll(scrollTop)
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [lastScroll])
+
     return (
-        <div className="header">
-            <div className="announcement">
-            <p className="a-text text-center w-full">BOGO 50% Off 
-                <a href="#" className="a-line px-0.5"> Craft Instant </a> 
+        // <div className="sticky top-0 z-50 -translate-y-0 transition duration-500">
+        <div className={`sticky ${isVisible ? '' : 'hidden'}`}>
+            <div className="relative h-auto py-2 bg-white">
+            <p className="text-center w-full text-xs font-serif text-black">BOGO 50% Off 
+                <a href="#" className="w-full text-center text-xs font-serif px-05"> Craft Instant </a> 
                 Start a Blue Bottle Coffee 
-                <a href="#" className="a-line">{' '}Subscription</a> | 
+                <a href="#" className="underline px-05">{' '}Subscription</a> | 
                 Free Shipping on Orders Over $40
             </p> 
             </div>
@@ -17,7 +38,7 @@ const Header = () => {
                     <div className='flex flex-nowrap h-full items-center gap-6 sm:gap-7'>
                         <span className="button nav-item">
                             <div className='hover:opacity-70' aria-hidden="true">
-                                <svg className="textBlack fill-current" width="20" height="7" viewBox='0 0 20 7'>
+                                <svg className="text-black fill-current" width="20" height="7" viewBox='0 0 20 7'>
                                 <rect width="20" height="1.33333"></rect>
                                 <rect y="5.33203" width="20" height="1.33333"></rect>
                                 </svg>
