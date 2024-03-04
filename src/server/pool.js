@@ -4,12 +4,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const pool = new pg.Pool({
-    connectionString: process.env.LOCAL_DB_URL
+    connectionString: process.env.DB_URL
 });
 
 pool.connect()
     .then((client) => {
-        console.log(`Connected to postgres using connection string ${process.env.LOCAL_DB_URL}`);
+        console.log(`Connected to postgres using connection string ${process.env.DB_URL}`);
         client.release();
     })
     .catch((err) => {
