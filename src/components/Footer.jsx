@@ -9,21 +9,21 @@ const Footer = () => {
                         <h2 className="font-sans tracking-widest uppercase text-sm xl:text-md text-white pb-11 sm:pb-14 xl:pb-18">BLUE BOTTLE COFFEE</h2>
                         
                         <div className="flex flex-col md:flex-row md:justify-between">
-                        <!-- First Column -->
+                        // First Column
                             <ul className="w-full flex flex-row flex-wrap -ml-1 pr-4">
 
                             </ul>
 
-                            <!-- Second Column -->
+                            // Second Column
                             <div className="md:justify-self-end md:w-5/12 -mt-1">
 
-                            <!-- Newsletter Signup Form -->
+                            // Newsletter Signup Form
                                 <form className="border-b max-w-max border-white bg-black pt-7 md:pt-0 pb-0.5">
                                     <input type="text" placeholder="Enter your email" />
                                     <button>Subscribe</button>
                                 </form>
 
-                                <!-- Links and Social Media Icons -->
+                                // Links and Social Media Icons
                                 <ul className="bg-black flex flex-row gap-7 md:gap-5 xl:gap-7 items-center md:transform md:origin-left md:scale-75 xl:transform-none pt-4.5 md:pt-3 pb-7 md:pb-10">
                                     <li>
                                         <a href="">About</a>
