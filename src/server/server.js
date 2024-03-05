@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8888;
 
 app.use(express.json());
 app.use(cors());
-//app.use(express.static(/*"folder"*/)); ADD THIS WHEN PRODUCTION FOLDER IS UP
+app.use(express.static("dist"));
 
 app.use('/mugs', mugRoutes);
 
