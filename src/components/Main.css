@@ -40,3 +40,14 @@
     text-align: center;
     max-width: 60px;
   }
+
+  .incrementor-button {
+    /* Adjust padding, font size, etc., to match your design */
+  }
+  
+  .incrementor-button:hover::before {
+    /* Create a pseudo-element for hover effects */
+    content: '';
+    position: absolute;
+    /* Add other styles to match the Tailwind appearance */
+  }

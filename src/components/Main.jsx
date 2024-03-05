@@ -10,12 +10,15 @@ const Main = () => {
     const [currentPic, setCurrentPic] = useState(images[0]);
     const [currentQuantity, setCurrentQuantity] = useState(1)
     const [currentPrice, setCurrentPrice] = useState(36);
+    const [showFirstButton, setShowFirstButton] = useState(false);
 
     const firstPic = () => {
         setCurrentPic(images[0]);
+        setShowFirstButton(false); // Hide the first button and show the second
     }
     const secondPic = () => {
         setCurrentPic(images[1]);
+        setShowFirstButton(true); // Show the first button and hide the second
     }
 
     const increaseQuantity = () => {
@@ -36,14 +39,16 @@ const Main = () => {
         setCurrentPrice(newQuantity * 36);
 
     }
+
+
 return (
 <>
 <div className="main-component">
     <div className='row'>
         <div className='carousel col-sm-8'>
-            <button onClick={(firstPic)}>{'<---'}</button>
+            {showFirstButton && <button onClick={firstPic}>{'<---'}</button>}
             <img src={currentPic} alt="coffee" height="100px" width="100px"/>
-            <button onClick={(secondPic)}>{'--->'}</button>
+            {!showFirstButton && <button onClick={secondPic}>{'--->'}</button>}
         </div>
         <div className='product-info col-sm-4'>
             <h1>Fellow Carter Move Mug, 12 oz in Fog Grey</h1>
@@ -52,9 +57,11 @@ return (
             <p>Typically ships in 1 to 3 business days.</p>
             <div className='row'>
                 <div className='quantity-selector col-sm-6'>
-                    <button className='btn btn-secondary' onClick={decreaseQuantity}>-</button>
-                    <input type="number" value={currentQuantity} className="form-control text-center" onChange={handleInputChange}/>
-                    <button className='btn btn-secondary' onClick={increaseQuantity}>+</button>
+                    <form aria-label="quantity selector" className="w-full bg-white flex flex-row border text-black">
+                        <button aria-label="decrease by 1" className="incrementor-button w-1/4 text-center" type="button" onClick={decreaseQuantity}>-</button>
+                        <input aria-label="item quantity" className="w-1/2 text-center outline-none" value={currentQuantity} maxLength="3" onChange={handleInputChange}/>
+                        <button aria-label="increase by 1" className="incrementor-button w-1/4 text-center" type="button" onClick={increaseQuantity}>+</button>
+                    </form>
                 </div>
                 <div className='add-to-cart col-sm-6'>
                     <button className='btn dark'>ADD TO CART | ${currentPrice}</button>
