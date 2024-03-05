@@ -1,3 +1,6 @@
+div {
+  display: block;
+}
 
 .a-text {
   font-family: serif;
@@ -169,6 +172,10 @@ a {
   z-index: 50;
 }
 
+.z-40 {
+  z-index: 40;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -203,4 +210,45 @@ a {
 
 .hidden {
   transform: translateY(-100%)
+}
+
+.sm:gap7 {
+  gap: 1.75rem;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.stroke-current {
+  stroke: currentColor;
+}
+
+mask {
+  mask-type: alpha;
+  x: 0;
+  y: 6;
+  width: 17;
+  height: 11;
+}
+
+/* g {
+  mask-image: url(#mask0_44_9583);
+  -webkit-mask-position-x: 0%;
+  -webkit-mask-position-y: 0%;
+  mask-size: auto;
+  mask-repeat: repeat;
+  mask-origin: border-box;
+  mask-clip: border-box;
+  mask-composite: add;
+  mask-mode: match-source;
+} */
+
+body {
+  line-height: inherit;
+  margin: 0;
+}
+
+.justify-center {
+  justify-content: center;
 }
