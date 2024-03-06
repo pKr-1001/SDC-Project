@@ -28,7 +28,7 @@ function App() {
 
       window.addEventListener('resize', handleSize)
 
-      if (size.width >= 1280) {
+      if (size.width >= 1480) {
         setToggle(true)
       } else {
         setToggle(false)
