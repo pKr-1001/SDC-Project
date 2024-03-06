@@ -97,6 +97,10 @@ a {
   gap: 1.5rem;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .flex-nowrap {
   flex-wrap: nowrap;
 }
@@ -251,4 +255,118 @@ body {
 
 .justify-center {
   justify-content: center;
+}
+
+.no-underline {
+  -webkit-text-decoration-line: none;
+  text-decoration: none;
+}
+
+.tracking-widest {
+  letter-spacing: .1rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.text-sm {
+  font-size: .875rem;
+  line-height: 1.125rem;
+}
+
+.font-sans {
+  font-family: Halis GR Regular, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+.border-opacity-0 {
+  --tw-border-opcaity: 0;
+}
+
+.bg-cream {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 251 247 / var(--tw-bg-opacity));
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.space-y-5 {
+  --tw-space-y-reverse: 0;
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+  margin-top: calc(1.25rem*(1 - var(--tw-space-y-reverse)));
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+
+.pt-10 {
+  padding-top: 8.5rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.duration-300 {
+  transition-duration: .3s;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(51 51 51 / var(--tw-border-opacity));
+}
+
+.border-b, .border-y {
+  border-bottom-width: 1px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.flex-1 {
+  flex: 1 1;
+}
+
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.inset-0, .inset-y-0 {
+  bottom: 0;
+  top: 0;
+}
+
+.inset-0 {
+  left: 0;
+  right: 0;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.opacity-100 {
+  opacity: 1;
 }

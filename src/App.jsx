@@ -3,13 +3,21 @@ import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import HeaderExpanded from "./components/HeaderExpanded";
 
 function App() {
+    const [expanded, setExpanded] = useState(false)
+
+    const example = expanded ? <HeaderExpanded/> : <Main/>
+    const flip = () => {
+        setExpanded(!expanded)
+    }
 
   return (
     <>
-        <Header />
-        <Main /> 
+        <Header flip={flip} />
+        {example}
+        {/* <Main />  */}
         {/* <Footer /> */}
         
     </>

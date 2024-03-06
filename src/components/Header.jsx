@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
-const Header = () => {
+const Header = ( { flip } ) => {
 
     const [isVisible, setIsVisible] = useState(true)
     const [lastScroll, setLastScroll] = useState(0)
+    const [expanded, setExpanded] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,27 +24,48 @@ const Header = () => {
 
     return (
         // <div className="sticky top-0 z-50 -translate-y-0 transition duration-500">
-        <div className={`sticky ${isVisible ? '' : 'hidden'}`}>
+        <div className={`sticky ${isVisible ? '' : 'hidden'} z-50`}>
             <div className="relative h-auto py-2 bg-white">
             <p className="text-center w-full text-xs font-serif text-black">BOGO 50% Off 
-                <a href="#" className="w-full text-center text-xs font-serif px-05"> Craft Instant </a> 
+                <a href="#" className="underline px-05 text-black"> Craft Instant </a> 
                 Start a Blue Bottle Coffee 
-                <a href="#" className="underline px-05">{' '}Subscription</a> | 
+                <a href="#" className="underline px-05 text-black">{' '}Subscription</a> | 
                 Free Shipping on Orders Over $40
             </p> 
             </div>
         <nav className="nav-bar flex w-full px-5 md:px-15 overflow-y-auto">
             <div className="w-full flex flex-col">
-                <div className='grid items-center h-12 md:h-20 grid-col-3'>
+                <div className='grid gap-4 items-center h-12 md:h-20 grid-col-3'>
                     <div className='flex flex-nowrap h-full items-center gap-6 sm:gap-7'>
-                        <span className="button nav-item">
+                        {/* <span className="button nav-item">
                             <div className='hover:opacity-70' aria-hidden="true">
                                 <svg className="text-black fill-current" width="20" height="7" viewBox='0 0 20 7'>
                                 <rect width="20" height="1.33333"></rect>
                                 <rect y="5.33203" width="20" height="1.33333"></rect>
                                 </svg>
                             </div>
-                        </span>
+                        </span> */}
+                                {expanded ? (
+                                    <span className="button nav-item" onClick={() => flip()}>
+                                    {/* New content for the expanded state */}
+                                    <div className='hover:opacity-70' aria-hidden="true">
+                                        <svg className="text-black fill-current" width="20" height="7" viewBox='0 0 20 7'>
+                                        <rect width="20" height="1.33333"></rect>
+                                        <rect y="5.33203" width="20" height="1.33333"></rect>
+                                        </svg>
+                                    </div>
+                                    </span>
+                                ) : (
+                                    <span className="button nav-item" onClick={() => flip()}>
+                                    {/* Original content for the collapsed state */}
+                                    <div className='hover:opacity-70' aria-hidden="true">
+                                        <svg className="text-black fill-current" width="20" height="7" viewBox='0 0 20 7'>
+                                        <rect width="20" height="1.33333"></rect>
+                                        <rect y="5.33203" width="20" height="1.33333"></rect>
+                                        </svg>
+                                    </div>
+                                    </span>
+                                )}
                     </div>
                     <div className='w-20 flex justify-center items-center mx-auto'>
                         <div aria-hidden="true" className='hover:opacity-70'>
@@ -86,6 +108,12 @@ const Header = () => {
                 </div>
             </div>
         </nav>
+        {expanded && (
+        <div className="button more-nav-options">
+        {/* Additional navigation options go here */}
+        <span href="#" className="nav-link">Option 1</span><span>Test</span>
+        </div>
+        )}
       </div>
     )
 }
