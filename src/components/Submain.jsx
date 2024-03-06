@@ -1,25 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Submain.css';
 import image from '../assets/fellowMugExtra2.webp';
 
 const Submain = () => {
+    const [mugData, setMugData] = useState({
+        title: '',
+        header1: '',
+        header2: '',
+        header3: '',
+        desc1: '',
+        desc2: '',
+        desc3: ''
+    });
+    const [pic, setPic] = useState({
+        pic: ''
+    })
+
+      useEffect(() => {
+        fetchMugs().then(setMugData).catch(console.error);
+        fetchPic().then(setPic).catch(console.error);
+      }, []);
 
     return (
         <section className='submain-section'>
             <div className='submain-text-container'>
-                <h2 className='submain-content-heading'>Minimalist style, maximum benefits.</h2>
+                <h2 className='submain-content-heading'>{mugData.title}</h2>
                 <div className='header-and-desc-container'>
                     <div className='header-and-desc'>
-                        <div className='header'>PERFECT FOR DRIVING</div>
-                        <p className='desc'>Snap-in splash guard prevents coffee from spilling on your stuff while you’re driving (or gesticulating wildly). Use the knob on the splash guard to push in or pull out of Carter. If the splash guard gets stuck, rotate it back and forth slightly until it releases.</p>
+                        <div className='header'>{mugData.header1}</div>
+                        <p className='desc'>{mugData.desc1}</p>
                     </div>
                     <div className='header-and-desc'>
-                        <div className='header'>KEEPS THE RIGHT TEMPERATURE</div>
-                        <p className='desc'>No more lukewarm coffee for you. Insulated double-walled stainless steel maintains your drink temperature, hot or cold, for a staggering 24 hours. Because delicious drinks should stay delicious, even on the go.</p>
+                        <div className='header'>{mugData.header2}</div>
+                        <p className='desc'>{mugData.desc2}</p>
                     </div>
                     <div className='header-and-desc'>
-                        <div className='header'>TASTES LIKE IT SHOULD</div>
-                        <p className='desc'>One of those features you might not realize you’re looking for until you find it: a ceramic interior coating that keeps coffee tasting like coffee, never adding funky flavors that other thermoses can. Life-changing, right?</p>
+                        <div className='header'>{mugData.header3}</div>
+                        <p className='desc'>{mugData.desc3}</p>
                     </div>
                 </div>
             </div>
@@ -29,5 +46,33 @@ const Submain = () => {
         </section>
     )
 }
+
+const fetchMugs = () => {
+    return fetch("https://fec-project-tjyl.onrender.com/mugs/1") 
+      .then((response) => response.json()) 
+      .then((data) => {
+        return {
+          title: data.mug_bottom_description_title,
+          header1: data.mug_bottom_header_1,
+          header2: data.mug_bottom_header_2,
+          header3: data.mug_bottom_header_3,
+          desc1: data.mug_bottom_description_1,
+          desc2: data.mug_bottom_description_2,
+          desc3: data.mug_bottom_description_3
+        };
+      })
+      .catch((error) => {
+        console.error("Error fetching mugs:", error);
+        throw error;
+      }); 
+};
+
+const fetchPic = () => {
+    return fetch("https://fec-project-tjyl.onrender.com/mug_pics/1")
+    .then((response) => response.json)
+    .then((data) => {
+        return {pic: data.mug_pic_extra_2}
+    })
+};
 
 export default Submain;
