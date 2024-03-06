@@ -1,29 +1,27 @@
-
-
 const HeaderExpanded = () => {
 
     return (
-        <div>
+        <div className="padding">
         <div className="fixed flex inset-0 z-40">
         <div className="opacity-100"></div>
         <div className="flex flex-col relative shadow-xl w-full h-full">
-        <div className="h-full w-full pt-10 pb-6 px-5 space-y-5 flex flex-col overflow-y-auto bg-cream">
-            <div className="mb-8">
+        <div className="h-full w-full pt-10 pb-6 px-custom space-y-5 flex flex-col overflow-y-auto bg-cream">
+            <div className="mb-8 padding">
                 <span className="font-sans tracking-widest uppercase text-black text-sm xl:text-md no-underline border-black border-b border-opacity-0 font-normal">
                     SHOP
                 </span>
             </div>
-            <div className="mb-8">
+            <div className="mb-8 padding">
                 <span className="font-sans tracking-widest uppercase text-black text-sm xl:text-md no-underline border-black border-b border-opacity-0 font-normal">
                     BEST SELLERS
                 </span>
             </div>
-            <div className="mb-8">
+            <div className="mb-8 padding">
                 <span className="font-sans tracking-widest uppercase text-black text-sm xl:text-md no-underline border-black border-b border-opacity-0 font-normal">
                     SUBSCRIPTIONS
                 </span>
             </div>
-            <div className="mb-8">
+            <div className="mb-8 padding">
                 <span className="font-sans tracking-widest uppercase text-black text-sm xl:text-md no-underline border-black border-b border-opacity-0 font-normal"> 
                     LOCATIONS
                 </span>
