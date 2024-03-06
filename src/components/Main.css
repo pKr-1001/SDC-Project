@@ -15,6 +15,10 @@
     height: auto;
     border-radius: 8px; /* Bootstrap-style rounded corners */
   }
+
+  .main-component {
+    background-color: rgb(247, 245, 239);
+  }
   
   .quantity-selector, .add-to-cart {
     display: flex;
