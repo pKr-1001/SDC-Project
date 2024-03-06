@@ -8,14 +8,15 @@
 
 .submain-text-container {
     flex: 1;
-    padding-left: 1.4rem;
+    padding-left: 1.1rem;
     padding-right: 1.4rem;
     padding-bottom: 1.4rem;
     padding-top: 3rem;
 }
 
 .submain-content-heading {
-    font-size: 2rem;
+    font-size: xx-large;
+    color: rgb(50, 50, 50);
     margin-bottom: 2.3rem;
     font-family: serif;
 }
@@ -36,19 +37,22 @@
 
 .header {
     width: 25%;
-    font-size: 0.7rem;
+    font-size: 0.715rem;
     margin-bottom: 10px;
     font-family: sans-serif;
-    letter-spacing: 1.5px;
+    font: normal;
+    color: rgb(56, 56, 56);
+    letter-spacing: 1.4px;
     line-height: 1.5rem;
 }
 
 .desc {
     width: 75%;
-    font-size: .92rem;
+    font-size: .915rem;
     font-family: serif;
+    color: rgb(56, 56, 56);
     padding-left: 1rem;
-    padding-top: 0.375rem;
+    padding-top: 0.3rem;
     line-height: 1.1rem;
     
 }
