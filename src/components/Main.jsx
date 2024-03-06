@@ -1,8 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import './Main.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Main = () => {
+  const fetchMugs = () => {
+    return fetch("https://fec-project-tjyl.onrender.com/mugs/1") 
+      .then((response) => response.json()) 
+      .then((data) => {
+        // Return an object containing all the pieces of data
+        return {
+          mugName: data.mug_name,
+          mugDescription1: data.mug_description_1,
+          mugDescription2: data.mug_description_2,
+          mugShipping: data.mug_shipping,
+        };
+      })
+      .catch((error) => {
+        console.error("Error fetching mugs:", error);
+        throw error;
+      }); 
+  };
+
+  const [mugData, setMugData] = useState({
+    mugName: '',
+    mugDescription1: '',
+    mugDescription2: '',
+    mugShipping: '',
+  });
+
+  // Step 2: Fetch data when the component mounts
+  useEffect(() => {
+    fetchMugs().then(setMugData).catch(console.error);
+  }, []);
 
     const images = ["https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch PDPs/Fellow Carter Move 12oz Fog Grey/test_Fellow-Carter-Move-12oz-M1-Hero.png", 
     'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch PDPs/Fellow Carter Move 12oz Fog Grey/test_Fellow-Carter-Move-12oz-M1-Detail1.png']
@@ -51,10 +80,10 @@ return (
             {!showFirstButton && <button onClick={secondPic}>{'--->'}</button>}
         </div>
         <div className='product-info col-sm-4'>
-            <h1>Fellow Carter Move Mug, 12 oz in Fog Grey</h1>
-            <p>The Carter Move Mug, from San Francisco–based designer Fellow, solves the traveler’s never-ending dilemma of transporting just-brewed coffee—and in great style.</p>
-            <p>Modeled with a wine glass’s lip, this mug is made for elegant drinking on the go. Not to mention the splash guard, stainless steel insulation, and ceramic coating that let you do it all while looking the part with our exclusive grey color, just for winter.</p>
-            <p>Typically ships in 1 to 3 business days.</p>
+            <h1>{mugData.mugName}</h1>
+            <p>{mugData.mugDescription1}</p>
+            <p>{mugData.mugDescription2}</p>
+            <p>{mugData.mugShipping}</p>
             <div className='row'>
                 <div className='quantity-selector col-sm-6'>
                     <form aria-label="quantity selector" className="w-full bg-white flex flex-row border text-black">
