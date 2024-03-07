@@ -1,8 +1,6 @@
 import { useState, useEffect} from 'react';
 import './Main.css';
-import './Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Carousel from 'react-bootstrap/Carousel';
 import Carousel from 'react-bootstrap/Carousel';
 
 // Main Component 
