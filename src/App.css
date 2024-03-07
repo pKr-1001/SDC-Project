@@ -372,11 +372,12 @@ body {
 
 @media (min-width: 1024px) {
   .lg-w-6 {
-    width: 1rem;
+    width: 1.3rem;
   }
 
   .lg-h-full {
     height: 100%;
+    transition: height 0.3s ease;
   }
 
   .lg-mr-auto {
@@ -394,4 +395,13 @@ span:hover {
   text-underline-offset: 3px;
   /* text-decoration-color: black; */
   cursor: pointer;
+}
+
+.margin {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.margin-bar {
+  margin-bottom: 5px;
 }
