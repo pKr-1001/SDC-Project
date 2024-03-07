@@ -73,6 +73,9 @@ const fetchPic = () => {
     .then((data) => {
         return {pic: data.mug_pic_extra_2}
     })
+    .catch((error)=>{
+        throw(error);
+    })
 };
 
 export default Submain;

@@ -29,7 +29,7 @@
 
 .header-and-desc {
     display: flex;
-    border-top: 2.5px;
+    border-top: 2.3px;
     padding-top: .65rem;
     border-top-color: lightgrey;
     border-top-style: solid;
