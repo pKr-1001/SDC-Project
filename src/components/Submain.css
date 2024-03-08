@@ -62,14 +62,15 @@
     display: flex;
     justify-content: flex-end;
     padding: 1.125rem;
+    overflow: hidden;
 }
 
 .submain-pic {
     max-width: 100%;
-    min-height: 100%;
+    height: auto;
 }
 
-@media (max-width: 960px) {
+@media screen and (max-width: 1000px) {
     .submain-section {
         flex-direction: column-reverse;
         padding-left: 13%;
