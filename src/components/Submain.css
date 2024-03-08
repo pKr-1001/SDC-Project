@@ -62,7 +62,7 @@
     display: flex;
     justify-content: flex-end;
     padding: 1.125rem;
-    overflow: hidden;
+    object-fit: cover;
 }
 
 .submain-pic {
@@ -70,9 +70,9 @@
     height: auto;
 }
 
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
     .submain-section {
-        flex-direction: column-reverse;
+        flex-direction: column;
         padding-left: 13%;
         padding-right: 13%;
     }
@@ -81,7 +81,7 @@
         font-size: x-large;
     }
     .header-and-desc {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .header {
         max-width: 100%;
