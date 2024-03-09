@@ -1,9 +1,19 @@
-import { useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import './Submain.css';
-import SubmainContext from './SubmainContext.jsx'
 
 const Submain = () => {
-    const { mugData, pic } = useContext(SubmainContext);
+
+    const [mugData, setMugData] = useState({
+        title: '',
+        header1: '',
+        header2: '',
+        header3: '',
+        desc1: '',
+        desc2: '',
+        desc3: ''
+    });
+    const [pic, setPic] = useState('');
+
 
     useEffect(() => {
         fetchMugs().then(setMugData).catch(console.error);
@@ -58,9 +68,9 @@ const fetchMugs = () => {
 
 const fetchPic = () => {
     return fetch("https://fec-project-tjyl.onrender.com/mug_pics/1")
-    .then((response) => response.json)
+    .then((response) => response.json())
     .then((data) => {
-        return {pic: data.mug_pic_extra_2}
+        return data.mug_pic_extra_2
     })
     .catch((error)=>{
         throw(error);
