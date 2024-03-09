@@ -12,13 +12,14 @@ const Submain = () => {
         desc2: '',
         desc3: ''
     });
-    const [pic, setPic] = useState('');
-
+    const [picURL, setPicURL] = useState('');
 
     useEffect(() => {
-        fetchMugs().then(setMugData).catch(console.error);
-        fetchPic().then(setPic).catch(console.error);
-    }, []);
+        fetchMugs().then(setMugData).then(console.log(mugData)).catch(console.error);
+        fetchpicURL().then(setPicURL).then(console.log(picURL)).catch(console.error);
+    }, [picURL]);
+
+    
 
     return (
         <section className='submain-section'>
@@ -40,7 +41,7 @@ const Submain = () => {
                 </div>
             </div>
             <div className='submain-pic-container'>
-                <img src={pic} alt='Fellow Mug Pic' className='submain-pic'></img>
+                <img src={picURL} alt='Fellow Mug pic' className='submain-pic'></img>
             </div>
         </section>
     )
@@ -66,11 +67,11 @@ const fetchMugs = () => {
       }); 
 };
 
-const fetchPic = () => {
+const fetchpicURL = () => {
     return fetch("https://fec-project-tjyl.onrender.com/mug_pics/1")
     .then((response) => response.json())
     .then((data) => {
-        return data.mug_pic_extra_2
+        return data.mug_pic_extra_2;
     })
     .catch((error)=>{
         throw(error);
