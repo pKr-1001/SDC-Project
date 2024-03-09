@@ -42,7 +42,7 @@ const Submain = () => {
                 </div>
             </div>
             <div className='submain-pic-container'>
-                <img src="dist/assets/fellowMugExtra2.webp" alt='Fellow Mug pic' className='submain-pic'></img>
+                <img src="assets/fellowMugExtra2.webp" alt='Fellow Mug pic' className='submain-pic'></img>
             </div>
         </section>
     )
