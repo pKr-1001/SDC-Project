@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Submain.css';
-import image from "../assets/fellowMugExtra2.webp";
+//import image from "../assets/fellowMugExtra2.webp";
 
 const Submain = () => {
 
@@ -42,7 +42,7 @@ const Submain = () => {
                 </div>
             </div>
             <div className='submain-pic-container'>
-                <img src={image} alt='Fellow Mug pic' className='submain-pic'></img>
+                <img src={picURL} alt='Fellow Mug pic' className='submain-pic'></img>
             </div>
         </section>
     )
