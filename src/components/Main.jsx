@@ -2,14 +2,15 @@ import { useState, useEffect} from 'react';
 import './Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
+import pic1 from '../assets/fellowMugMain.webp';
+import pic2 from '../assets/fellowMugExtra.webp';
 
 // Main Component 
 // Main Component 
 const Main = () => {
 
    // images array containing the images we will display
-    const images = ["https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch PDPs/Fellow Carter Move 12oz Fog Grey/test_Fellow-Carter-Move-12oz-M1-Hero.png", 
-    'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch PDPs/Fellow Carter Move 12oz Fog Grey/test_Fellow-Carter-Move-12oz-M1-Detail1.png']
+    const images = [pic1, pic2]
 
     const [currentQuantity, setCurrentQuantity] = useState(1) // Create and set the initial state for the current quantity
     const [currentPrice, setCurrentPrice] = useState(36); // Create and set the initial state for the current price 
