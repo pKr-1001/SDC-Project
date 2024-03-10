@@ -104,3 +104,7 @@ p {
 .input-group .btn {
   border-radius: 0;
 }
+
+.test {
+  flex-wrap: nowrap !important;
+}
