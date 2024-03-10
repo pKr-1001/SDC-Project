@@ -72,7 +72,7 @@
 
 @media (max-width: 1000px) {
     .submain-section {
-        flex-direction: column;
+        flex-direction: column-reverse;
         padding-left: 13%;
         padding-right: 13%;
     }
@@ -81,7 +81,7 @@
         font-size: x-large;
     }
     .header-and-desc {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .header {
         max-width: 100%;
