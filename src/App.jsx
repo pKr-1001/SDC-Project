@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -41,11 +42,16 @@ function App() {
 
   return (
     <>
-        <Header flip={flip} menuIcon={menuIcon} toggle={toggle}/>
-        {main}
-        <Submain />
-        {/* <Main />  */}
-        {/* <Footer /> */}
+      <Routes>
+        <Route path="/" element ={
+          <div>
+            <Header flip={flip} menuIcon={menuIcon} toggle={toggle}/>
+            {main}
+            <Submain />
+            {/* <Footer /> */}
+          </div>
+        }/>
+      </Routes>
     </>
   );
 }

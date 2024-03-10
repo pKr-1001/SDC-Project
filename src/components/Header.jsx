@@ -14,12 +14,17 @@ const Header = ( { flip, menuIcon, toggle } ) => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const trigger = 100;
+
+        if (scrollTop > trigger) {
             if (scrollTop > lastScroll) {
                 setIsVisible(false);
             } else {
                 setIsVisible(true);
             }
-            setLastScroll(scrollTop)
+        }
+        setLastScroll(scrollTop)
+
         }
         window.addEventListener('scroll', handleScroll);
         return () => {

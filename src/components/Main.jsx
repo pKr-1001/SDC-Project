@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 
 // Main Component 
+// Main Component 
 const Main = () => {
 
    // images array containing the images we will display

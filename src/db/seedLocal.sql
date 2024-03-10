@@ -29,9 +29,9 @@ VALUES (
 INSERT INTO mug_pics (mug_id, mug_pic_main, mug_pic_extra, mug_pic_extra_2)
 VALUES (
         1,
-        './src/assets/fellowMugMain.webp',
-        './src/assets/fellowMugExtra.webp',
-        './src/assets/fellowMugExtra2.webp'
+        '../assets/fellowMugMain.webp',
+        '../assets/fellowMugExtra.webp',
+        '../assets/fellowMugExtra2.webp'
 );
 
 INSERT INTO mugs (mug_name, mug_description_1, mug_description_2, mug_shipping, mug_cost) 
@@ -46,7 +46,7 @@ VALUES (
 INSERT INTO mug_pics (mug_id, mug_pic_main, mug_pic_extra, mug_pic_extra_2)
 VALUES (
         2,
-        './src/assets/blueBottleMugMain.webp',
-        './src/assets/blueBottleMugBottom.webp',
-        './src/assets/blueBottleMugBottom2.webp'
+        '../assets/blueBottleMugMain.webp',
+        '../assets/blueBottleMugBottom.webp',
+        '../assets/blueBottleMugBottom2.webp'
 );

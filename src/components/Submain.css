@@ -36,7 +36,7 @@
 }
 
 .header {
-    width: 25%;
+    max-width: 25%;
     font-size: 0.715rem;
     margin-bottom: 10px;
     font-family: sans-serif;
@@ -47,7 +47,7 @@
 }
 
 .desc {
-    width: 75%;
+    max-width: 75%;
     font-size: .915rem;
     font-family: serif;
     color: rgb(60, 60, 60);
@@ -62,9 +62,32 @@
     display: flex;
     justify-content: flex-end;
     padding: 1.125rem;
+    object-fit: cover;
 }
 
 .submain-pic {
     max-width: 100%;
     height: auto;
+}
+
+@media (max-width: 1000px) {
+    .submain-section {
+        flex-direction: column;
+        padding-left: 13%;
+        padding-right: 13%;
+    }
+    .submain-content-heading {
+        text-align: center;
+        font-size: x-large;
+    }
+    .header-and-desc {
+        flex-direction: column-reverse;
+    }
+    .header {
+        max-width: 100%;
+    }
+    .desc {
+        padding-left: 0;
+        max-width: 100%;
+    }
 }
