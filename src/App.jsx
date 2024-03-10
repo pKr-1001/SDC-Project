@@ -7,7 +7,6 @@ import Submain from "./components/Submain";
 import Footer from "./components/Footer";
 import HeaderExpanded from "./components/HeaderExpanded";
 
-
 function App() {
     const [expanded, setExpanded] = useState(false)
     const [menuIcon, setMenuIcon] = useState(true)

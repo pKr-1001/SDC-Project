@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Submain.css';
+import pic from '../assets/fellowMugExtra2.webp';
 
 const Submain = () => {
 
@@ -12,13 +13,12 @@ const Submain = () => {
         desc2: '',
         desc3: ''
     });
-    const [pic, setPic] = useState('');
-
 
     useEffect(() => {
-        fetchMugs().then(setMugData).catch(console.error);
-        fetchPic().then(setPic).catch(console.error);
+        fetchMugs().then(setMugData).then(console.log(mugData)).catch(console.error);
     }, []);
+
+    
 
     return (
         <section className='submain-section'>
@@ -40,7 +40,7 @@ const Submain = () => {
                 </div>
             </div>
             <div className='submain-pic-container'>
-                <img src={pic} alt='Fellow Mug Pic' className='submain-pic'></img>
+                <img src={pic} alt='Fellow Mug pic' className='submain-pic'></img>
             </div>
         </section>
     )
@@ -64,17 +64,6 @@ const fetchMugs = () => {
         console.error("Error fetching mugs:", error);
         throw error;
       }); 
-};
-
-const fetchPic = () => {
-    return fetch("https://fec-project-tjyl.onrender.com/mug_pics/1")
-    .then((response) => response.json())
-    .then((data) => {
-        return data.mug_pic_extra_2
-    })
-    .catch((error)=>{
-        throw(error);
-    })
 };
 
 export default Submain;
