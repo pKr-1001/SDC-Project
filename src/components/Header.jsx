@@ -37,10 +37,10 @@ const Header = ( { flip, menuIcon, toggle } ) => {
     return (
     <div className={`sticky ${isVisible ? '' : 'hidden'} z-50`}>
         <div className="relative py-2 bg-white">
-            <p className="text-center w-full text-xs font-serif text-black margin-bar">BOGO 50% Off 
-                <a href="#" className="underline px-05 text-black"> Craft Instant </a> 
-                Start a Blue Bottle Coffee 
-                <a href="#" className="underline px-05 text-black">{' '}Subscription</a> | 
+            <p className="text-center w-full text-xs font-serif text-black margin-bar">10% Off Select
+                <a href="#" className="underline px-05 text-black">Kettles</a> 
+                and <a href='#' className='underline px-05 text-black'>Drinkware</a> | Free Shipping on Coffee
+                <a href="#" className="underline px-05 text-black">Subscription</a> | 
                 Free Shipping on Orders Over $40
             </p> 
         </div>
