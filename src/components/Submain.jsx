@@ -16,7 +16,7 @@ const Submain = () => {
 
     useEffect(() => {
         fetchMugs().then(setMugData).then(console.log(mugData)).catch(console.error);
-    }, [mugData]);
+    }, []);
 
     
 
