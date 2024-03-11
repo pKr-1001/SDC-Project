@@ -41,7 +41,7 @@ const Submain = () => {
                 </div>
             </div>
             <div className='submain-pic-container'>
-                <img src={imageArr[2]} alt='Fellow Mug pic' className='submain-pic'></img>
+                <img src={pic} alt='Fellow Mug pic' className='submain-pic'></img>
             </div>
         </section>
     )
