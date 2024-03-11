@@ -35,7 +35,7 @@ const Header = () => {
         }
     }, [lastScroll])
 
-    const headerContent =  toggle ? <HeaderLargeContent menuIcon={menuIcon}/> : <HeaderSmallContent menuIcon={menuIcon} flip={flip}/>
+    const headerContent =  toggle ? <HeaderLargeContent/> : <HeaderSmallContent/>
 
     return (
     <div className={`sticky ${isVisible ? '' : 'hidden'} z-50`}>

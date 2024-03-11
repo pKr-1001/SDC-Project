@@ -1,4 +1,11 @@
-const HeaderSmallContent = ( {menuIcon, flip} ) => {
+import { useContext } from 'react'
+import { Context1 } from '../App';
+
+
+const HeaderSmallContent = () => {
+
+    let { flip, menuIcon, toggle } = useContext(Context1)
+
 
     return (
         <>
@@ -22,7 +29,7 @@ const HeaderSmallContent = ( {menuIcon, flip} ) => {
                             <div className='hover:opacity-70' aria-hidden="true">
 
                                 <svg className="text-black fill-current" width="20" height="20" viewBox='0 0 20 20'>
-                                <path d="M11.324 9.526l7.541-7.54.662-.662L18.204 0l-.663.662-7.54 7.54L2.458.662 1.797 0 .473 1.324l.662.662 7.541 7.54-8.014 8.015-.662.662 1.325 1.323.662-.661L10 10.85l8.013 8.015.662.661L20 18.203l-.662-.662z" fill-rule="evenodd" fill="#333333">
+                                <path d="M11.324 9.526l7.541-7.54.662-.662L18.204 0l-.663.662-7.54 7.54L2.458.662 1.797 0 .473 1.324l.662.662 7.541 7.54-8.014 8.015-.662.662 1.325 1.323.662-.661L10 10.85l8.013 8.015.662.661L20 18.203l-.662-.662z" fillRule="evenodd" fill="#333333">
                                 </path>
                                 </svg>
                             </div>

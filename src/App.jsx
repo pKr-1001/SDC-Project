@@ -57,7 +57,7 @@ function App() {
             </div>
           }/>
         </Routes>
-          </Context1.Provider>
+      </Context1.Provider>
     </>
   );
 }
