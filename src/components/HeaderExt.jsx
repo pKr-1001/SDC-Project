@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const HeaderExt = ({ flip, menuIcon }) => {
+const HeaderExt = () => {
     const [isVisible, setIsVisible] = useState(true)
     const [lastScroll, setLastScroll] = useState(0)
 
