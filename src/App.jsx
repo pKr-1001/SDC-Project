@@ -6,6 +6,9 @@ import Main from "./components/Main";
 import Submain from "./components/Submain";
 import Footer from "./components/Footer";
 import HeaderExpanded from "./components/HeaderExpanded";
+import React from 'react'
+
+export let Context1 = React.createContext();
 
 function App() {
     const [expanded, setExpanded] = useState(false)
@@ -41,16 +44,20 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element ={
-          <div>
-            <Header flip={flip} menuIcon={menuIcon} toggle={toggle}/>
-            {main}
-            <Submain />
-            {/* <Footer /> */}
-          </div>
-        }/>
-      </Routes>
+      <Context1.Provider value={{ menuIcon, toggle, flip }}>
+        <Routes>
+          <Route path="/" element ={
+            <div>
+
+              <Header flip={flip} menuIcon={menuIcon} toggle={toggle}/>
+              {main}
+
+              <Submain />
+              {/* <Footer /> */}
+            </div>
+          }/>
+        </Routes>
+          </Context1.Provider>
     </>
   );
 }

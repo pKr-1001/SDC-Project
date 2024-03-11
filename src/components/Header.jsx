@@ -1,10 +1,13 @@
 
 import HeaderExt from './HeaderExt';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import HeaderLargeContent from './HeaderLargeContent';
 import HeaderSmallContent from './HeaderSmallContent';
+import { Context1 } from '../App';
 
-const Header = ( { flip, menuIcon, toggle } ) => {
+const Header = () => {
+
+    let { flip, menuIcon, toggle } = useContext(Context1)
 
     const [isVisible, setIsVisible] = useState(true)
     const [lastScroll, setLastScroll] = useState(0)
