@@ -14,7 +14,7 @@ function App() {
     const [size, setSize] = useState({ width: window.innerWidth})
     const [toggle, setToggle] = useState(false)
 
-    const main = expanded ? <HeaderExpanded/> : <Main/>
+    const main = expanded ? <HeaderExpanded/> : <ImageProvider><Main/></ImageProvider>
 
     const flip = () => {
         setExpanded(!expanded)
