@@ -6,6 +6,7 @@ import Main from "./components/Main";
 import Submain from "./components/Submain";
 import Footer from "./components/Footer";
 import HeaderExpanded from "./components/HeaderExpanded";
+import { ImageProvider } from "./components/imageContext";
 
 function App() {
     const [expanded, setExpanded] = useState(false)
@@ -46,7 +47,11 @@ function App() {
           <div>
             <Header flip={flip} menuIcon={menuIcon} toggle={toggle}/>
             {main}
-            <Submain />
+            <ImageProvider>
+              <Submain />
+            </ImageProvider>
+              
+
             {/* <Footer /> */}
           </div>
         }/>
