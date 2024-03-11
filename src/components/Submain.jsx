@@ -5,6 +5,7 @@ import { imageContext } from './imageContext';
 
 const Submain = () => {
     const imageArr = useContext(imageContext);
+    console.log(imageArr[2]);
     const [mugData, setMugData] = useState({
         title: '',
         header1: '',
