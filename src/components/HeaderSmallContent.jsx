@@ -1,4 +1,9 @@
-const HeaderSmallContent = ( {menuIcon, flip} ) => {
+import { useContext } from "react"
+import { ContextHeader } from "../App"
+
+const HeaderSmallContent = () => {
+
+    let {menuIcon, flip} = useContext(ContextHeader)
 
     return (
         <>

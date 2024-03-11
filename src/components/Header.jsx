@@ -1,10 +1,13 @@
 
 import HeaderExt from './HeaderExt';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import HeaderLargeContent from './HeaderLargeContent';
 import HeaderSmallContent from './HeaderSmallContent';
+import { ContextHeader } from '../App';
 
-const Header = ( { flip, menuIcon, toggle } ) => {
+const Header = () => {
+
+    let {flip, menuIcon, toggle} = useContext(ContextHeader)
 
     const [isVisible, setIsVisible] = useState(true)
     const [lastScroll, setLastScroll] = useState(0)
@@ -32,7 +35,7 @@ const Header = ( { flip, menuIcon, toggle } ) => {
         }
     }, [lastScroll])
 
-    const headerContent =  toggle ? <HeaderLargeContent menuIcon={menuIcon}/> : <HeaderSmallContent menuIcon={menuIcon} flip={flip}/>
+    const headerContent =  toggle ? <HeaderLargeContent/> : <HeaderSmallContent/>
 
     return (
     <div className={`sticky ${isVisible ? '' : 'hidden'} z-50`}>

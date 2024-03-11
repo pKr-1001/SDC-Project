@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
@@ -8,7 +8,10 @@ import Footer from "./components/Footer";
 import HeaderExpanded from "./components/HeaderExpanded";
 import { ImageProvider } from "./components/imageContext";
 
+export let ContextHeader = React.createContext();
+
 function App() {
+
     const [expanded, setExpanded] = useState(false)
     const [menuIcon, setMenuIcon] = useState(true)
     const [size, setSize] = useState({ width: window.innerWidth})
@@ -26,7 +29,7 @@ function App() {
         }
     }
 
-    // IF PIXEL IS BIGGER THAN 1279 IT TURNS
+    // IF PIXEL IS BIGGER THAN 1480 IT TURNS
     useEffect(() => {
       const handleSize = () => {
         setSize({ width: window.innerWidth})
@@ -50,8 +53,10 @@ function App() {
       <Routes>
         <Route path="/" element ={
           <div>
-            <Header flip={flip} menuIcon={menuIcon} toggle={toggle}/>
-            {main}
+            <ContextHeader.Provider value = { {flip, menuIcon, toggle} }>
+              <Header flip={flip} menuIcon={menuIcon} toggle={toggle}/>
+              {main}
+            </ContextHeader.Provider>
             <ImageProvider>
               <Submain />
             </ImageProvider>
