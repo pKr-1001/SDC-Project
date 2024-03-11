@@ -11,9 +11,9 @@ const ImageProvider = ({children}) => {
 
     const [imageArr, setImage] = useState(
             [
-            'dist/assets/fellowMugMain-B42gLWKu.webp',
-            'dist/assets/fellowMugExtra-CiwDVw-L.webp',
-            'dist/assets/fellowMugExtra2-D79ScuSf.webp'
+            '/assets/fellowMugMain-B42gLWKu.webp',
+            '/assets/fellowMugExtra-CiwDVw-L.webp',
+            '/assets/fellowMugExtra2-D79ScuSf.webp'
             ]
         );
 
