@@ -10,7 +10,7 @@ const ImageProvider = ({children}) => {
         ]);
 
         return (
-            <imageContext.Provider value={{imageArr, setImage}}>
+            <imageContext.Provider value={imageArr}>
                 {children}
             </imageContext.Provider>
         )

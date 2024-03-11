@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import './Submain.css';
-import { imageContext, ImageProvider } from './imageContext';
+import { imageContext } from './imageContext';
 import pic from '../assets/fellowMugExtra2.webp';
 
 const Submain = () => {
@@ -41,7 +41,7 @@ const Submain = () => {
                 </div>
             </div>
             <div className='submain-pic-container'>
-                <img src={imageArr.imageArr[2]} alt='Fellow Mug pic' className='submain-pic'></img>
+                <img src={imageArr[2]} alt='Fellow Mug pic' className='submain-pic'></img>
             </div>
         </section>
     )
