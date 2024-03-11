@@ -19,6 +19,11 @@ function App() {
     const flip = () => {
         setExpanded(!expanded)
         setMenuIcon(!menuIcon)
+        if (document.body.style.overflow === 'hidden') {
+          document.body.style.overflow = '';
+        } else {
+          document.body.style.overflow = 'hidden';
+        }
     }
 
     // IF PIXEL IS BIGGER THAN 1279 IT TURNS
