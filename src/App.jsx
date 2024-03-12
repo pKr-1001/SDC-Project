@@ -62,7 +62,7 @@ function App() {
             </ImageProvider>
               
 
-            {/* <Footer /> */}
+            <Footer />
           </div>
         }/>
       </Routes>
