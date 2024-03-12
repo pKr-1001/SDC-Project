@@ -5,7 +5,6 @@ import { imageContext } from './imageContext';
 
 const Submain = () => {
     const imageArr = useContext(imageContext);
-    console.log(imageArr[2]);
     const [mugData, setMugData] = useState({
         title: '',
         header1: '',
@@ -42,7 +41,7 @@ const Submain = () => {
                 </div>
             </div>
             <div className='submain-pic-container'>
-                <img src={'/assets/fellowMugExtra2-D79ScuSf.webp'} alt='Fellow Mug pic' className='submain-pic'></img>
+                <img src={imageArr[2]} alt='Fellow Mug pic' className='submain-pic'></img>
             </div>
         </section>
     )
