@@ -1,4 +1,7 @@
 import { createContext, useState } from 'react';
+import pic1 from '../assets/fellowMugMain.webp';
+import pic2 from '../assets/fellowMugExtra.webp';
+import pic from '../assets/fellowMugExtra2.webp';
 
 const imageContext = createContext();
 
