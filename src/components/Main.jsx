@@ -2,8 +2,8 @@ import { useState, useEffect, useContext } from 'react';
 import './Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
-import pic1 from '../assets/fellowMugMain.webp';
-import pic2 from '../assets/fellowMugExtra.webp';
+// import pic1 from '../assets/fellowMugMain.webp';
+// import pic2 from '../assets/fellowMugExtra.webp';
 import { imageContext } from './imageContext';
 
 // Main Component 
