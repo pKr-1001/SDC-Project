@@ -1,6 +1,5 @@
 # MCSPA-2312A FEC Project / Code Whisperers
 
-###### Contributed by @SteamedMilkBun(Lance) , @pKr-1001 (Park) , @HumbertoPalacios (Humberto) , @bphillip97 (Brandon)
 
 ### Description
 This front-end capstone project is replicates this product page:
@@ -17,3 +16,9 @@ This front-end capstone project is replicates this product page:
 2) Execute npm install to install the following dependencies:
   - bootstrap, cors, dotenv, express, pg, react, react-bootstrap, react-dom, react-router-dom, react-slick, slick-carousel 
 3) Execute npm run dev and click on the localhost link in order to see the entire project
+
+### Credits 
+- @pKr-1001 (Park)
+- @HumbertoPalacios (Humberto)
+- @SteamedMilkBun(Lance)
+- @bphillip97 (Brandon)
