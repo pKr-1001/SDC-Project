@@ -1,5 +1,3 @@
-
-import HeaderExt from './HeaderExt';
 import { useEffect, useState, useContext } from 'react';
 import HeaderLargeContent from './HeaderLargeContent';
 import HeaderSmallContent from './HeaderSmallContent';
@@ -7,18 +5,18 @@ import { ContextHeader } from '../App';
 
 const Header = () => {
 
-    let {flip, menuIcon, toggle} = useContext(ContextHeader)
+    let {toggle} = useContext(ContextHeader)
 
     const [isVisible, setIsVisible] = useState(true)
     const [lastScroll, setLastScroll] = useState(0)
-    // const [viewPort, setViewPort] = useState(false)
 
-
+    // scroll effect to show the Navbar
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const trigger = 100;
-
+            
+            // will trigger if scrolled more than 100
         if (scrollTop > trigger) {
             if (scrollTop > lastScroll) {
                 setIsVisible(false);
@@ -35,6 +33,7 @@ const Header = () => {
         }
     }, [lastScroll])
 
+    // To show different navbar depends on the sizes of the page
     const headerContent =  toggle ? <HeaderLargeContent/> : <HeaderSmallContent/>
 
     return (
