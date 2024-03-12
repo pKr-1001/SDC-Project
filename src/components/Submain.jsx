@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import './Submain.css';
 import { imageContext } from './imageContext';
-//import pic from '../assets/fellowMugExtra2.webp';
+
 
 const Submain = () => {
     const imageArr = useContext(imageContext);
