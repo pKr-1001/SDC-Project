@@ -10,6 +10,8 @@ import { ImageProvider } from "./components/imageContext";
 
 export let ContextHeader = React.createContext();
 
+export let ContextHeader = React.createContext();
+
 function App() {
 
     const [expanded, setExpanded] = useState(false)
@@ -60,8 +62,6 @@ function App() {
             <ImageProvider>
               <Submain />
             </ImageProvider>
-              
-
             <Footer />
           </div>
         }/>
