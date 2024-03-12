@@ -103,9 +103,9 @@ return (
             <p>{mugData.mugDescription1}</p>
             <p>{mugData.mugDescription2}</p>
             <p>{mugData.mugShipping}</p>
-            <div className='row'>
+            <div className='row interactive'>
                 <div className='quantity-selector col-sm-4'>
-                    <div className="input-group mb-3 test">
+                    <div className="input-group test">
                         <div className="input-group-prepend">
                             <button className="btn btn-integrated decreaser" type="button" onClick={decreaseQuantity}>-</button>
                         </div>
