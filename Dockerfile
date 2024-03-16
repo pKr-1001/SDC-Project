@@ -12,6 +12,7 @@ RUN npm run build
 # Stage 2: Serve the built React SPA using Nginx
 FROM nginx:alpine
 
+# Remove the default Nginx configuration file
 # Copy custom Nginx configuration file
 COPY nginx.conf /etc/nginx/nginx.conf
 
