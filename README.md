@@ -42,6 +42,41 @@ No specific configurations are included in this block
 
 This NGINX configuration sets up a reverse proxy server that listens on port 8080 and forwards requests to a group of backend servers defined in the ``backendserver`` upstream group. Load balancing is applied to distribute requests among the backend servers. Custom headers are set to preserve client information and indicate the backend server that procoessed each request
 
+## Docker
+
+I used docker to run the backend servers for NGINX server.
+Install the Docker from Docker website.
+Create ``Dockerfiles`` on your root folder.
+
+Stage 1) Build the React application.
+```
+FROM node:16 AS build
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+```
+
+Stage 2) Serve the built React SPA using NGINX
+```
+FROM nginx:alpine
+
+COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+```
+### Explanation
+
+This dockerfile utilizes multi-stage builds to first build the React application using Node.js and then serve the built static files using NGINX. The Node.js image is used for the build stage to compile the React application, while the NGINX image is used for the final stage to server the compiled static files. By separating the build and runtime environments, the resulting Docker images is optimized for size and only contains the necessary runtime dependencies requires to serve the React application.
+
+You can use Dockerfile to containerize your React application, ensuring consistency and portability across different environments. Adjust the file paths and configurations as needed on your project structure requirements
+
 ## Implement Redis
 
 1) Run `` sudo apt-get install redis `` on your terminal
