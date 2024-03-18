@@ -1,7 +1,7 @@
 # MCSPA-2312A SDC Project
 
 ### By
-pKr-1001 (Park)
+@pKr-1001 (Park)
 The project was forked from FEC-Porject.
 
 ### Description
