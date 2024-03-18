@@ -85,10 +85,29 @@ You can use Dockerfile to containerize your React application, ensuring consiste
 
 ## Implement Redis
 
+Redis is a versatile key-value pair database that we will integrate into our system to enhance its functionality and performance.
+
 1) Run `` sudo apt-get install redis `` on your terminal
 
 2) Start the Redis server by executing `` redis-server ``
 
 3) Access access by running, `` redis-cli `` in the terminal
 
-Redis is a versatile key-value pair database that we will integrate into our system to enhance its functionality and performance.
+To measure the improvement in data retrieval speed, you can follow these steps:
+
+Before Redis Integration:
+
+Send a request to http://localhost:8888/mugs using Postman and note the time it takes to receive the response.
+
+After Redis Integration:
+
+Fetch data from the API and store it in the Redis database.
+Modify your application logic to check if the data is already available in Redis before fetching it from the API.
+Send the same request to http://localhost:8888/mugs using Postman and compare the time it takes to retrieve the response with the previous time.
+By caching data in Redis, subsequent requests for the same data can be served much faster as the data is retrieved from memory rather than from the API. This can significantly reduce the response time and improve overall system performance, especially for frequently accessed data.
+
+Keep in mind that the actual performance improvement may vary depending on factors such as the size of the dataset, network latency, and the efficiency of your caching strategy.
+
+In this project, two features were implemented specifically for Redis caching related to retrieving mugs:
+1) Getting all mugs
+2) Getting one mug
