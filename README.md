@@ -2,7 +2,7 @@
 
 
 ### Description
-In this project, we will set up an NGINX server with load balancing to run a React app. Additionally, we will integrate Redis, a key-value pair database, into our system.
+In this project, we will set up an NGINX server with load balancing to run a React app. Additionally, we will integrate Redis, a key-value pair database, into our system to enhance performance and functionality.
 
 ### Installation
 1) Create a react app by executing npm create vite@latest
@@ -46,7 +46,9 @@ This NGINX configuration sets up a reverse proxy server that listens on port 808
 
 I used docker to run the backend servers for NGINX server.
 Install the Docker from Docker website.
-Create ``Dockerfiles`` on your root folder.
+
+### Dockerfile
+Create ``Dockerfile`` on your root folder.
 
 Stage 1) Build the React application.
 ```
@@ -71,6 +73,10 @@ EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
 ```
+
+Stage 3) Building Docker Image
+``docker build . -t (name) ``
+``docker run -p (port #):80 (name)`` This will run the backend server for NGINX locally, and your can map the port inside the container as needed. Ensure to include these servers in the ``nginx.conf`` file, for example ``server 127.0.0.1:1111;``
 ### Explanation
 
 This dockerfile utilizes multi-stage builds to first build the React application using Node.js and then serve the built static files using NGINX. The Node.js image is used for the build stage to compile the React application, while the NGINX image is used for the final stage to server the compiled static files. By separating the build and runtime environments, the resulting Docker images is optimized for size and only contains the necessary runtime dependencies requires to serve the React application.
