@@ -1,36 +1,59 @@
 import express from 'express';
 import pool from './pool.js';
+import Redis from 'redis';
+import axios from 'axios';
 
 const router = express.Router();
+const redisClient = Redis.createClient();
+
+const DEFAULT_EXPIRATION = 3600;
+
+await redisClient.connect();
 
 router.get('/', async (req, res) => {
-    try {
-        const data = await pool.query('SELECT * FROM mugs');
-        console.log("Result of get all products query: ", data.rows);
-        res.json(data.rows);
-    }
-    catch(err){
-        console.error(err);
-        res.sendStatus(500);
-    }
+    const mugs = await getOrSetCache('mugs', async () => {
+        const { data } = await axios.get('https://fec-project-tjyl.onrender.com/mugs')
+        res.json(data)
+        return data
+    })
+    res.json(mugs)
 })
 
+const getOrSetCache = async (key, cb) => {
+    return new Promise( async (resolve, reject) => {
+        try {
+            const dataFromCache = await redisClient.GET(key);
+            if (dataFromCache !== null) {
+                // Data found in cache
+                resolve(JSON.parse(dataFromCache));
+            } else {
+                // Data not found in cache, fetch from API
+                const freshData = await cb()
+                // const { data } = await axios.get('https://fec-project-tjyl.onrender.com/mugs');
+                // Set data in cache
+                await redisClient.SETEX(key, DEFAULT_EXPIRATION, JSON.stringify(freshData));
+                resolve(freshData);
+            }
+        } catch (error) {
+            reject(error);
+        }
+    })
+}
+
+
 router.get('/:id', async (req, res) => {
-    //TODO edge cases for id
-    const id = Number.parseInt(req.params.id);
     try {
-        const data = await pool.query(
-            `SELECT * FROM mugs
-            WHERE mug_id = $1`,
-            [id]
-        )
-        console.log("Result of get all mugs query: ", data.rows[0]);
-        res.json(data.rows[0]);
-    }
-    catch (err) {
-        console.error(err);
-        res.sendStatus(500);
-    }
+        const id = Number.parseInt(req.params.id);
+        const mugs = await getOrSetCache(`mugs:${id}`, async () => {
+            const { data } = await axios.get(`https://fec-project-tjyl.onrender.com/mugs/${id}`)
+            if (data.length == 0) return res.sendStatus(500)
+            return data
+        })
+            res.json(mugs)
+
+        } catch (error) {
+            console.log(error)
+        }
 })
 
 router.post('/', async (req, res) => {
