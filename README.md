@@ -77,9 +77,12 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-Stage 3) Building Docker Image
-``docker build . -t (name) ``
-``docker run -p (port #):80 (name)`` This will run the backend server for NGINX locally, and your can map the port inside the container as needed. Ensure to include these servers in the ``nginx.conf`` file, for example ``server 127.0.0.1:1111;``
+Stage 3) Building Docker Image <br>
+```
+docker build . -t (name) <br>
+docker run -p (port #):80 (name)
+```
+This will run the backend server for NGINX locally, and your can map the port inside the container as needed. Ensure to include these servers in the ``nginx.conf`` file, for example ``server 127.0.0.1:1111;``
 ### Explanation
 
 This dockerfile utilizes multi-stage builds to first build the React application using Node.js and then serve the built static files using NGINX. The Node.js image is used for the build stage to compile the React application, while the NGINX image is used for the final stage to server the compiled static files. By separating the build and runtime environments, the resulting Docker images is optimized for size and only contains the necessary runtime dependencies requires to serve the React application.
