@@ -11,3 +11,7 @@ In progress.
 3) Execute ``npm run dev`` and click on the localhost link in order to see the entire project
 
 
+## Implement NGINX
+
+
+## Implement Redis
