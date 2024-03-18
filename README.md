@@ -8,7 +8,7 @@ In this project, we will set up an NGINX server with load balancing to run a Rea
 1) Create a react app by executing npm create vite@latest
 2) Execute ``npm install`` to install the dependencies:
 3) Execute ``npm run dev`` and click on the localhost link in order to see the entire project
-
+4) Execute ``npm run build`` Build for Docker, this command will build the project and generate the necessary production-ready files that Docker will use to create the Docker image
 
 ## NGINX Installation and Configuration
 TO install NGINX, ensure that homebrew is installed, then run ``brew install nginx`` in your terminal.
