@@ -2,27 +2,28 @@
 
 
 ### Description
-In progress.
+In this project, we will set up an NGINX server with load balancing to run a React app. Additionally, we will integrate Redis, a key-value pair database, into our system.
 
 ### Installation
 1) Create a react app by executing npm create vite@latest
-2) Execute ``npm install`` to install the following dependencies:
-  - bootstrap, cors, dotenv, express, pg, react, react-bootstrap, react-dom, react-router-dom, react-slick, slick-carousel 
+2) Execute ``npm install`` to install the dependencies:
 3) Execute ``npm run dev`` and click on the localhost link in order to see the entire project
 
 
-## Implement NGINX
-- Requires homebrew installed
-To install NGINX ``brew install nginx``
+## NGINX Installation and Configuration
+TO install NGINX, ensure that homebrew is installed, then run ``brew install nginx`` in your terminal.
 
-After insalling `` cd /usr/local/etc/nginx `` change your directory to nginx, use code-editor application to open up the files
+After insalling, navigate to the NGINX directory by executing  `` cd /usr/local/etc/nginx `` in the terminal. Use your preferred code editor to open the ``nginx.conf`` file for configuration
+
+### NGINX Configuration
+To run NGINX locally with our project, we need to make changes to the ``nginx.conf`` file. Ensure that the configuration settings are appropriately adjusted for your project's requirements.
 
 ## Implement Redis
 
-Run `` sudo apt-get install redis `` on your terminal
+1) Run `` sudo apt-get install redis `` on your terminal
 
-To run redis server `` redis-server ``
+2) Start the Redis server by executing `` redis-server ``
 
-To access redis, `` redis-cli ``
+3) Access access by running, `` redis-cli `` in the terminal
 
-Redis is key value pair database.
+Redis is a versatile key-value pair database that we will integrate into our system to enhance its functionality and performance.
