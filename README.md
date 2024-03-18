@@ -21,3 +21,5 @@ Run `` sudo apt-get install redis `` on your terminal
 To run redis server `` redis-server ``
 
 To access redis, `` redis-cli ``
+
+Redis is key value pair database.
