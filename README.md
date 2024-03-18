@@ -12,7 +12,10 @@ In progress.
 
 
 ## Implement NGINX
+- Requires homebrew installed
+To install NGINX ``brew install nginx``
 
+After insalling `` cd /usr/local/etc/nginx `` change your directory to nginx, use code-editor application to open up the files
 
 ## Implement Redis
 
