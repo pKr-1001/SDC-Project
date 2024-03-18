@@ -16,4 +16,4 @@ In progress.
 
 ## Implement Redis
 
-Run `` npm i redis ``
+Run `` sudo apt-get install redis ``
