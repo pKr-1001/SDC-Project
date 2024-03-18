@@ -15,3 +15,5 @@ In progress.
 
 
 ## Implement Redis
+
+Run `` npm i redis ``
