@@ -16,4 +16,8 @@ In progress.
 
 ## Implement Redis
 
-Run `` sudo apt-get install redis ``
+Run `` sudo apt-get install redis `` on your terminal
+
+To run redis server `` redis-server ``
+
+To access redis, `` redis-cli ``
