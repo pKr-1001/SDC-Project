@@ -1,5 +1,8 @@
 # MCSPA-2312A SDC Project
 
+### By
+pKr-1001 (Park)
+The project was forked from FEC-Porject.
 
 ### Description
 In this project, we will set up an NGINX server with load balancing to run a React app. Additionally, we will integrate Redis, a key-value pair database, into our system to enhance performance and functionality.
