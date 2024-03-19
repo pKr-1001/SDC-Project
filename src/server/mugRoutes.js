@@ -10,13 +10,6 @@ await redisClient.connect();
 
 const DEFAULT_EXPIRATION = 3600;
 
-// (async () => {
-  
-//     // redisClient.on("error", (err) => console.log("Redis Client Error", err));
-  
-//     console.log("Redis Connected!")
-//   })();
-
 // Grab all mugs from the database with redis caching
 router.get('/', async (req, res) => {
     const mugs = await getOrSetCache('mugs', async () => {
