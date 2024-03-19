@@ -4,21 +4,29 @@ import Redis from 'redis';
 import axios from 'axios';
 
 const router = express.Router();
+
 const redisClient = Redis.createClient();
+await redisClient.connect();
 
 const DEFAULT_EXPIRATION = 3600;
 
-await redisClient.connect();
+// (async () => {
+  
+//     // redisClient.on("error", (err) => console.log("Redis Client Error", err));
+  
+//     console.log("Redis Connected!")
+//   })();
 
+// Grab all mugs from the database with redis caching
 router.get('/', async (req, res) => {
     const mugs = await getOrSetCache('mugs', async () => {
         const { data } = await axios.get('https://fec-project-tjyl.onrender.com/mugs')
-        res.json(data)
         return data
     })
     res.json(mugs)
 })
 
+// function to get or set cache
 const getOrSetCache = async (key, cb) => {
     return new Promise( async (resolve, reject) => {
         try {
@@ -40,7 +48,7 @@ const getOrSetCache = async (key, cb) => {
     })
 }
 
-
+// Grab a single mug from the database with redis caching
 router.get('/:id', async (req, res) => {
     try {
         const id = Number.parseInt(req.params.id);
