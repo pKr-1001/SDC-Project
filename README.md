@@ -55,9 +55,9 @@ Create ``Dockerfile`` on your root folder.
 
 Stage 1) Build the React application.
 ```
-FROM node:16 AS build
+FROM node:18 as build
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
@@ -70,7 +70,7 @@ Stage 2) Serve the built React SPA using NGINX
 ```
 FROM nginx:alpine
 
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
